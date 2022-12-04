@@ -1,0 +1,1274 @@
+[
+  {
+    "country": "Aruba",
+    "code": "AW",
+    "id": "533",
+    "population": 107195
+  },
+  {
+    "country": "Afghanistan",
+    "code": "AFG",
+    "id": "004",
+    "population": 39835428
+  },
+  {
+    "country": "Angola",
+    "code": "AO",
+    "id": "024",
+    "population": 33933611
+  },
+  {
+    "country": "Albania",
+    "code": "AL",
+    "id": "008",
+    "population": 2811666
+  },
+  {
+    "country": "Andorra",
+    "code": "AD",
+    "id": "020",
+    "population": 77354
+  },
+  {
+    "country": "United Arab Emirates",
+    "code": "AE",
+    "id": "784",
+    "population": 9991083
+  },
+  {
+    "country": "Argentina",
+    "code": "AR",
+    "id": "032",
+    "population": 45808747
+  },
+  {
+    "country": "Armenia",
+    "code": "AM",
+    "id": "051",
+    "population": 2968128
+  },
+  {
+    "country": "American Samoa",
+    "code": "AS",
+    "id": "016",
+    "population": 55103
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "code": "AG",
+    "id": "028",
+    "population": 98728
+  },
+  {
+    "country": "Australia",
+    "code": "AU",
+    "id": "036",
+    "population": 25739256
+  },
+  {
+    "country": "Austria",
+    "code": "AT",
+    "id": "040",
+    "population": 8956279
+  },
+  {
+    "country": "Azerbaijan",
+    "code": "AZ",
+    "id": "031",
+    "population": 10145212
+  },
+  {
+    "country": "Burundi",
+    "code": "BI",
+    "id": "108",
+    "population": 12255429
+  },
+  {
+    "country": "Belgium",
+    "code": "BE",
+    "id": "056",
+    "population": 11587882
+  },
+  {
+    "country": "Benin",
+    "code": "BJ",
+    "id": "204",
+    "population": 12451031
+  },
+  {
+    "country": "Burkina Faso",
+    "code": "BF",
+    "id": "854",
+    "population": 21497097
+  },
+  {
+    "country": "Bangladesh",
+    "code": "BD",
+    "id": "050",
+    "population": 166303494
+  },
+  {
+    "country": "Bulgaria",
+    "code": "BG",
+    "id": "100",
+    "population": 6899125
+  },
+  {
+    "country": "Bahrain",
+    "code": "BH",
+    "id": "048",
+    "population": 1748295
+  },
+  {
+    "country": "Bahamas",
+    "code": "BS",
+    "id": "044",
+    "population": 396914
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "code": "BA",
+    "id": "070",
+    "population": 3263459
+  },
+  {
+    "country": "Belarus",
+    "code": "BY",
+    "id": "112",
+    "population": 9340314
+  },
+  {
+    "country": "Belize",
+    "code": "BZ",
+    "id": "084",
+    "population": 404915
+  },
+  {
+    "country": "Bermuda",
+    "code": "BM",
+    "id": "060",
+    "population": 63867
+  },
+  {
+    "country": "Bolivia",
+    "code": "BO",
+    "id": "068",
+    "population": 11832936
+  },
+  {
+    "country": "Brazil",
+    "code": "BR",
+    "id": "076",
+    "population": 213993441
+  },
+  {
+    "country": "Barbados",
+    "code": "BB",
+    "id": "052",
+    "population": 287708
+  },
+  {
+    "country": "Brunei Darussalam",
+    "code": "BN",
+    "id": "096",
+    "population": 441532
+  },
+  {
+    "country": "Bhutan",
+    "code": "BT",
+    "id": "064",
+    "population": 779900
+  },
+  {
+    "country": "Botswana",
+    "code": "BW",
+    "id": "072",
+    "population": 2397240
+  },
+  {
+    "country": "Central African Republic",
+    "code": "CF",
+    "id": "140",
+    "population": 4919987
+  },
+  {
+    "country": "Canada",
+    "code": "CA",
+    "id": "124",
+    "population": 38246108
+  },
+  {
+    "country": "Switzerland",
+    "code": "CH",
+    "id": "756",
+    "population": 8697723
+  },
+  {
+    "country": "Chile",
+    "code": "CL",
+    "id": "152",
+    "population": 19212362
+  },
+  {
+    "country": "China",
+    "code": "CN",
+    "id": "156",
+    "population": 1412360000
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "code": "CI",
+    "id": "384",
+    "population": 27053629
+  },
+  {
+    "country": "Cameroon",
+    "code": "CM",
+    "id": "120",
+    "population": 27224262
+  },
+  {
+    "country": "Congo, Democratic Republic of the",
+    "code": "CD",
+    "id": "180",
+    "population": 92377986
+  },
+  {
+    "country": "Congo",
+    "code": "CG",
+    "id": "178",
+    "population": 5657017
+  },
+  {
+    "country": "Colombia",
+    "code": "CO",
+    "id": "170",
+    "population": 51265841
+  },
+  {
+    "country": "Comoros",
+    "code": "KM",
+    "id": "174",
+    "population": 888456
+  },
+  {
+    "country": "Cabo Verde",
+    "code": "CV",
+    "id": "132",
+    "population": 561901
+  },
+  {
+    "country": "Costa Rica",
+    "code": "CR",
+    "id": "188",
+    "population": 5139053
+  },
+  {
+    "country": "Cuba",
+    "code": "CU",
+    "id": "192",
+    "population": 11317498
+  },
+  {
+    "country": "Curaçao",
+    "code": "CW",
+    "id": "531",
+    "population": 152369
+  },
+  {
+    "country": "Cayman Islands",
+    "code": "KY",
+    "id": "136",
+    "population": 66498
+  },
+  {
+    "country": "Cyprus",
+    "code": "CY",
+    "id": "196",
+    "population": 1215588
+  },
+  {
+    "country": "Czechia",
+    "code": "CZ",
+    "id": "203",
+    "population": 10703446
+  },
+  {
+    "country": "Germany",
+    "code": "DE",
+    "id": "276",
+    "population": 83129285
+  },
+  {
+    "country": "Djibouti",
+    "code": "DJ",
+    "id": "262",
+    "population": 1002197
+  },
+  {
+    "country": "Dominica",
+    "code": "DM",
+    "id": "212",
+    "population": 72172
+  },
+  {
+    "country": "Denmark",
+    "code": "DK",
+    "id": "208",
+    "population": 5856733
+  },
+  {
+    "country": "Dominican Republic",
+    "code": "DO",
+    "id": "214",
+    "population": 10953714
+  },
+  {
+    "country": "Algeria",
+    "code": "DZ",
+    "id": "012",
+    "population": 44616626
+  },
+  {
+    "country": "Ecuador",
+    "code": "EC",
+    "id": "218",
+    "population": 17888474
+  },
+  {
+    "country": "Egypt",
+    "code": "EG",
+    "id": "818",
+    "population": 104258327
+  },
+  {
+    "country": "Spain",
+    "code": "ES",
+    "id": "724",
+    "population": 47326687
+  },
+  {
+    "country": "Estonia",
+    "code": "EE",
+    "id": "233",
+    "population": 1329254
+  },
+  {
+    "country": "Ethiopia",
+    "code": "ET",
+    "id": "231",
+    "population": 117876226
+  },
+  {
+    "country": "Finland",
+    "code": "FI",
+    "id": "246",
+    "population": 5541696
+  },
+  {
+    "country": "Fiji",
+    "code": "FJ",
+    "id": "242",
+    "population": 902899
+  },
+  {
+    "country": "France",
+    "code": "FR",
+    "id": "250",
+    "population": 67499343
+  },
+  {
+    "country": "Faroe Islands",
+    "code": "FO",
+    "id": "234",
+    "population": 49053
+  },
+  {
+    "country": "Micronesia (Federated States of)",
+    "code": "FM",
+    "id": "583",
+    "population": 116255
+  },
+  {
+    "country": "Gabon",
+    "code": "GA",
+    "id": "266",
+    "population": 2278829
+  },
+  {
+    "country": "United Kingdom",
+    "code": "GB",
+    "id": "826",
+    "population": 67326569
+  },
+  {
+    "country": "Georgia",
+    "code": "GE",
+    "id": "268",
+    "population": 3708610
+  },
+  {
+    "country": "Ghana",
+    "code": "GH",
+    "id": "288",
+    "population": 31732128
+  },
+  {
+    "country": "Gibraltar",
+    "code": "GI",
+    "id": "292",
+    "population": 33691
+  },
+  {
+    "country": "Guinea",
+    "code": "GN",
+    "id": "324",
+    "population": 13497237
+  },
+  {
+    "country": "Gambia",
+    "code": "GM",
+    "id": "270",
+    "population": 2486937
+  },
+  {
+    "country": "Guinea-Bissau",
+    "code": "GW",
+    "id": "624",
+    "population": 2015490
+  },
+  {
+    "country": "Equatorial Guinea",
+    "code": "GQ",
+    "id": "226",
+    "population": 1449891
+  },
+  {
+    "country": "Greece",
+    "code": "GR",
+    "id": "300",
+    "population": 10664568
+  },
+  {
+    "country": "Grenada",
+    "code": "GD",
+    "id": "308",
+    "population": 113015
+  },
+  {
+    "country": "Greenland",
+    "code": "GL",
+    "id": "304",
+    "population": 56653
+  },
+  {
+    "country": "Guatemala",
+    "code": "GT",
+    "id": "320",
+    "population": 17109746
+  },
+  {
+    "country": "Guam",
+    "code": "GU",
+    "id": "316",
+    "population": 170184
+  },
+  {
+    "country": "Guyana",
+    "code": "GY",
+    "id": "328",
+    "population": 790329
+  },
+  {
+    "country": "Hong Kong",
+    "code": "HK",
+    "id": "344",
+    "population": 7413100
+  },
+  {
+    "country": "Honduras",
+    "code": "HN",
+    "id": "340",
+    "population": 10062994
+  },
+  {
+    "country": "Croatia",
+    "code": "HR",
+    "id": "191",
+    "population": 3899000
+  },
+  {
+    "country": "Haiti",
+    "code": "HT",
+    "id": "332",
+    "population": 11541683
+  },
+  {
+    "country": "Hungary",
+    "code": "HU",
+    "id": "348",
+    "population": 9709886
+  },
+  {
+    "country": "Indonesia",
+    "code": "ID",
+    "id": "360",
+    "population": 276361788
+  },
+  {
+    "country": "Isle of Man",
+    "code": "IM",
+    "id": "833",
+    "population": 85410
+  },
+  {
+    "country": "India",
+    "code": "IN",
+    "id": "356",
+    "population": 1393409033
+  },
+  {
+    "country": "Ireland",
+    "code": "IE",
+    "id": "372",
+    "population": 5028230
+  },
+  {
+    "country": "Iran",
+    "code": "IR",
+    "id": "364",
+    "population": 85028760
+  },
+  {
+    "country": "Iraq",
+    "code": "IQ",
+    "id": "368",
+    "population": 41179351
+  },
+  {
+    "country": "Iceland",
+    "code": "IS",
+    "id": "352",
+    "population": 372295
+  },
+  {
+    "country": "Israel",
+    "code": "IL",
+    "id": "376",
+    "population": 9364000
+  },
+  {
+    "country": "Italy",
+    "code": "IT",
+    "id": "380",
+    "population": 59066225
+  },
+  {
+    "country": "Jamaica",
+    "code": "JM",
+    "id": "388",
+    "population": 2973462
+  },
+  {
+    "country": "Jordan",
+    "code": "JO",
+    "id": "400",
+    "population": 10269022
+  },
+  {
+    "country": "Japan",
+    "code": "JP",
+    "id": "392",
+    "population": 125681593
+  },
+  {
+    "country": "Kazakhstan",
+    "code": "KZ",
+    "id": "398",
+    "population": 19002586
+  },
+  {
+    "country": "Kenya",
+    "code": "KE",
+    "id": "404",
+    "population": 54985702
+  },
+  {
+    "country": "Kyrgyzstan",
+    "code": "KG",
+    "id": "417",
+    "population": 6694200
+  },
+  {
+    "country": "Cambodia",
+    "code": "KH",
+    "id": "116",
+    "population": 16946446
+  },
+  {
+    "country": "Kiribati",
+    "code": "KI",
+    "id": "296",
+    "population": 121388
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "code": "KN",
+    "id": "659",
+    "population": 53546
+  },
+  {
+    "country": "Korea, Republic of",
+    "code": "KR",
+    "id": "410",
+    "population": 51744876
+  },
+  {
+    "country": "Kuwait",
+    "code": "KW",
+    "id": "414",
+    "population": 4328553
+  },
+  {
+    "country": "Lao People's Democratic Republic",
+    "code": "LA",
+    "id": "418",
+    "population": 7379358
+  },
+  {
+    "country": "Lebanon",
+    "code": "LB",
+    "id": "422",
+    "population": 6769151
+  },
+  {
+    "country": "Liberia",
+    "code": "LR",
+    "id": "430",
+    "population": 5180208
+  },
+  {
+    "country": "Libya",
+    "code": "LY",
+    "id": "434",
+    "population": 6958538
+  },
+  {
+    "country": "Saint Lucia",
+    "code": "LC",
+    "id": "662",
+    "population": 184401
+  },
+  {
+    "country": "Liechtenstein",
+    "code": "LI",
+    "id": "438",
+    "population": 38254
+  },
+  {
+    "country": "Sri Lanka",
+    "code": "LK",
+    "id": "144",
+    "population": 22156000
+  },
+  {
+    "country": "Lesotho",
+    "code": "LS",
+    "id": "426",
+    "population": 2159067
+  },
+  {
+    "country": "Lithuania",
+    "code": "LT",
+    "id": "440",
+    "population": 2795321
+  },
+  {
+    "country": "Luxembourg",
+    "code": "LU",
+    "id": "442",
+    "population": 639070
+  },
+  {
+    "country": "Latvia",
+    "code": "LV",
+    "id": "428",
+    "population": 1883162
+  },
+  {
+    "country": "Macao",
+    "code": "MO",
+    "id": "446",
+    "population": 658391
+  },
+  {
+    "country": "Saint Martin (French part)",
+    "code": "MF",
+    "id": "663",
+    "population": 39239
+  },
+  {
+    "country": "Morocco",
+    "code": "MA",
+    "id": "504",
+    "population": 37344787
+  },
+  {
+    "country": "Monaco",
+    "code": "MC",
+    "id": "492",
+    "population": 39520
+  },
+  {
+    "country": "Moldova, Republic of",
+    "code": "MD",
+    "id": "498",
+    "population": 2573928
+  },
+  {
+    "country": "Madagascar",
+    "code": "MG",
+    "id": "450",
+    "population": 28427333
+  },
+  {
+    "country": "Maldives",
+    "code": "MV",
+    "id": "462",
+    "population": 543620
+  },
+  {
+    "country": "Mexico",
+    "code": "MX",
+    "id": "484",
+    "population": 130262220
+  },
+  {
+    "country": "Marshall Islands",
+    "code": "MH",
+    "id": "584",
+    "population": 59618
+  },
+  {
+    "country": "North Macedonia",
+    "code": "MK",
+    "id": "807",
+    "population": 2065092
+  },
+  {
+    "country": "Mali",
+    "code": "ML",
+    "id": "466",
+    "population": 20855724
+  },
+  {
+    "country": "Malta",
+    "code": "MT",
+    "id": "470",
+    "population": 516869
+  },
+  {
+    "country": "Myanmar",
+    "code": "MM",
+    "id": "104",
+    "population": 54806014
+  },
+  {
+    "country": "Montenegro",
+    "code": "ME",
+    "id": "499",
+    "population": 620173
+  },
+  {
+    "country": "Mongolia",
+    "code": "MN",
+    "id": "496",
+    "population": 3329282
+  },
+  {
+    "country": "Northern Mariana Islands",
+    "code": "MP",
+    "id": "580",
+    "population": 57910
+  },
+  {
+    "country": "Mozambique",
+    "code": "MZ",
+    "id": "508",
+    "population": 32163045
+  },
+  {
+    "country": "Mauritania",
+    "code": "MR",
+    "id": "478",
+    "population": 4775110
+  },
+  {
+    "country": "Mauritius",
+    "code": "MU",
+    "id": "480",
+    "population": 1266060
+  },
+  {
+    "country": "Malawi",
+    "code": "MW",
+    "id": "454",
+    "population": 19647681
+  },
+  {
+    "country": "Malaysia",
+    "code": "MY",
+    "id": "458",
+    "population": 32776195
+  },
+  {
+    "country": "Namibia",
+    "code": "NA",
+    "id": "516",
+    "population": 2587344
+  },
+  {
+    "country": "New Caledonia",
+    "code": "NC",
+    "id": "540",
+    "population": 272620
+  },
+  {
+    "country": "Niger",
+    "code": "NE",
+    "id": "562",
+    "population": 25130810
+  },
+  {
+    "country": "Nigeria",
+    "code": "NG",
+    "id": "566",
+    "population": 211400704
+  },
+  {
+    "country": "Nicaragua",
+    "code": "NI",
+    "id": "558",
+    "population": 6702379
+  },
+  {
+    "country": "Netherlands",
+    "code": "NL",
+    "id": "528",
+    "population": 17533405
+  },
+  {
+    "country": "Norway",
+    "code": "NO",
+    "id": "578",
+    "population": 5408320
+  },
+  {
+    "country": "Nepal",
+    "code": "NP",
+    "id": "524",
+    "population": 29674920
+  },
+  {
+    "country": "Nauru",
+    "code": "NR",
+    "id": "520",
+    "population": 10873
+  },
+  {
+    "country": "New Zealand",
+    "code": "NZ",
+    "id": "554",
+    "population": 5122600
+  },
+  {
+    "country": "Oman",
+    "code": "OM",
+    "id": "512",
+    "population": 5223376
+  },
+  {
+    "country": "Pakistan",
+    "code": "PK",
+    "id": "586",
+    "population": 225199929
+  },
+  {
+    "country": "Panama",
+    "code": "PA",
+    "id": "591",
+    "population": 4381583
+  },
+  {
+    "country": "Peru",
+    "code": "PE",
+    "id": "604",
+    "population": 33359416
+  },
+  {
+    "country": "Philippines",
+    "code": "PH",
+    "id": "608",
+    "population": 111046910
+  },
+  {
+    "country": "Palau",
+    "code": "PW",
+    "id": "585",
+    "population": 18174
+  },
+  {
+    "country": "Papua New Guinea",
+    "code": "PG",
+    "id": "598",
+    "population": 9119005
+  },
+  {
+    "country": "Poland",
+    "code": "PL",
+    "id": "616",
+    "population": 37781024
+  },
+  {
+    "country": "Puerto Rico",
+    "code": "PR",
+    "id": "630",
+    "population": 3263584
+  },
+  {
+    "country": "Korea (Democratic People's Republic of)",
+    "code": "KP",
+    "id": "408",
+    "population": 25887045
+  },
+  {
+    "country": "Portugal",
+    "code": "PT",
+    "id": "620",
+    "population": 10299423
+  },
+  {
+    "country": "Paraguay",
+    "code": "PY",
+    "id": "600",
+    "population": 7219641
+  },
+  {
+    "country": "French Polynesia",
+    "code": "PF",
+    "id": "258",
+    "population": 282534
+  },
+  {
+    "country": "Qatar",
+    "code": "QA",
+    "id": "634",
+    "population": 2930524
+  },
+  {
+    "country": "Romania",
+    "code": "RO",
+    "id": "642",
+    "population": 19115146
+  },
+  {
+    "country": "Russia",
+    "code": "RU",
+    "id": "643",
+    "population": 143446060
+  },
+  {
+    "country": "Rwanda",
+    "code": "RW",
+    "id": "646",
+    "population": 13276517
+  },
+  {
+    "country": "Saudi Arabia",
+    "code": "SA",
+    "id": "682",
+    "population": 35340680
+  },
+  {
+    "country": "Sudan",
+    "code": "SD",
+    "id": "729",
+    "population": 44909351
+  },
+  {
+    "country": "Senegal",
+    "code": "SN",
+    "id": "686",
+    "population": 17196308
+  },
+  {
+    "country": "Singapore",
+    "code": "SG",
+    "id": "702",
+    "population": 5453566
+  },
+  {
+    "country": "Solomon Islands",
+    "code": "SB",
+    "id": "090",
+    "population": 703995
+  },
+  {
+    "country": "Sierra Leone",
+    "code": "SL",
+    "id": "694",
+    "population": 8141343
+  },
+  {
+    "country": "El Salvador",
+    "code": "SV",
+    "id": "222",
+    "population": 6518500
+  },
+  {
+    "country": "San Marino",
+    "code": "SM",
+    "id": "674",
+    "population": 34010
+  },
+  {
+    "country": "Somalia",
+    "code": "SO",
+    "id": "706",
+    "population": 16359500
+  },
+  {
+    "country": "Serbia",
+    "code": "RS",
+    "id": "688",
+    "population": 6844078
+  },
+  {
+    "country": "South Sudan",
+    "code": "SS",
+    "id": "728",
+    "population": 11381377
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "code": "ST",
+    "id": "678",
+    "population": 223364
+  },
+  {
+    "country": "Suriname",
+    "code": "SR",
+    "id": "740",
+    "population": 591798
+  },
+  {
+    "country": "Slovenia",
+    "code": "SI",
+    "id": "705",
+    "population": 2107007
+  },
+  {
+    "country": "Sweden",
+    "code": "SE",
+    "id": "752",
+    "population": 10415811
+  },
+  {
+    "country": "Eswatini",
+    "code": "SZ",
+    "id": "748",
+    "population": 1172369
+  },
+  {
+    "country": "Sint Maarten (Dutch part)",
+    "code": "SX",
+    "id": "534",
+    "population": 42846
+  },
+  {
+    "country": "Seychelles",
+    "code": "SC",
+    "id": "690",
+    "population": 99202
+  },
+  {
+    "country": "Syrian Arab Republic",
+    "code": "SY",
+    "id": "760",
+    "population": 18275704
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "code": "TC",
+    "id": "796",
+    "population": 39226
+  },
+  {
+    "country": "Chad",
+    "code": "TD",
+    "id": "148",
+    "population": 16914985
+  },
+  {
+    "country": "Togo",
+    "code": "TG",
+    "id": "768",
+    "population": 8478242
+  },
+  {
+    "country": "Thailand",
+    "code": "TH",
+    "id": "764",
+    "population": 69950844
+  },
+  {
+    "country": "Tajikistan",
+    "code": "TJ",
+    "id": "762",
+    "population": 9749625
+  },
+  {
+    "country": "Turkmenistan",
+    "code": "TM",
+    "id": "795",
+    "population": 6117933
+  },
+  {
+    "country": "Timor-Leste",
+    "code": "TL",
+    "id": "626",
+    "population": 1343875
+  },
+  {
+    "country": "Tonga",
+    "code": "TO",
+    "id": "776",
+    "population": 106759
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "code": "TT",
+    "id": "780",
+    "population": 1403374
+  },
+  {
+    "country": "Tunisia",
+    "code": "TN",
+    "id": "788",
+    "population": 11935764
+  },
+  {
+    "country": "Turkey",
+    "code": "TR",
+    "id": "792",
+    "population": 85042736
+  },
+  {
+    "country": "Tuvalu",
+    "code": "TV",
+    "id": "798",
+    "population": 11925
+  },
+  {
+    "country": "Tanzania, United Republic of",
+    "code": "TZ",
+    "id": "834",
+    "population": 61498438
+  },
+  {
+    "country": "Uganda",
+    "code": "UG",
+    "id": "800",
+    "population": 47123533
+  },
+  {
+    "country": "Ukraine",
+    "code": "UA",
+    "id": "804",
+    "population": 43814581
+  },
+  {
+    "country": "Uruguay",
+    "code": "UY",
+    "id": "858",
+    "population": 3485152
+  },
+  {
+    "country": "United States",
+    "code": "US",
+    "id": "840",
+    "population": 331893745
+  },
+  {
+    "country": "Uzbekistan",
+    "code": "UZ",
+    "id": "860",
+    "population": 34915100
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "code": "VC",
+    "id": "670",
+    "population": 111269
+  },
+  {
+    "country": "Venezuela (Bolivarian Republic of)",
+    "code": "VE",
+    "id": "862",
+    "population": 28704947
+  },
+  {
+    "country": "Virgin Islands (British)",
+    "code": "VG",
+    "id": "092",
+    "population": 30423
+  },
+  {
+    "country": "Virgin Islands (U.S.)",
+    "code": "VI",
+    "id": "850",
+    "population": 105870
+  },
+  {
+    "country": "Vietnam",
+    "code": "VN",
+    "id": "704",
+    "population": 98168829
+  },
+  {
+    "country": "Vanuatu",
+    "code": "VU",
+    "id": "548",
+    "population": 314464
+  },
+  {
+    "country": "Samoa",
+    "code": "WS",
+    "id": "882",
+    "population": 200144
+  },
+  {
+    "country": "Yemen",
+    "code": "YE",
+    "id": "887",
+    "population": 30490639
+  },
+  {
+    "country": "South Africa",
+    "code": "ZA",
+    "id": "710",
+    "population": 60041996
+  },
+  {
+    "country": "Zambia",
+    "code": "ZM",
+    "id": "894",
+    "population": 18920657
+  },
+  {
+    "country": "Zimbabwe",
+    "code": "ZW",
+    "id": "716",
+    "population": 15092171
+  }
+]
