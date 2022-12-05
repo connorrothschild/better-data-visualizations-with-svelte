@@ -5,6 +5,8 @@
 for d in */ ; do
     # Navigate to the directory
     cd $d
+    # Add a .nojekyll file to the directory
+    echo > .nojekyll
     # If the directory has a package.json file, run npm install and npm run build
     if [ -f "package.json" ]; then
         npm install
