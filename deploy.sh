@@ -35,3 +35,4 @@ git commit -m "Deploy: $(date +%F)"
 git push -f git@github.com:connorrothschild/better-data-visualizations-with-svelte.git master:gh-pages
 
 cd -
+git checkout .
