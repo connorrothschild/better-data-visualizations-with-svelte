@@ -20,8 +20,10 @@ mkdir -p docs
 
 # Loop through all directories in the current directory again, excluding the dist/ folder
 for d in $(find . -maxdepth 1 -type d ! -path "./docs"); do
-    # Remove .git from the directory name
-    dir=$(echo $d | sed 's/.\///')
+    # If .git/ is in the directory name, delete it
+    if [[ $d == *".git"* ]]; then
+        d=${d/.git/}
+    fi
   # Move the dist/ folder from the current directory into the deployed/ folder
   # But first rename the dist/ folder to the name of the current directory
     mv $d/dist docs/$(basename $d)
