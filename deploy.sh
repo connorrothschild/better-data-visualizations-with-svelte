@@ -4,8 +4,8 @@
 set -e
 
 # create a build folder and clear it if it exists
-rm -rf dist
-mkdir -p dist
+rm -rf docs
+mkdir -p docs
 
 # cd into each directory and run npm run build, if it has a package.json
 for dir in */; do
@@ -13,20 +13,21 @@ for dir in */; do
     cd $dir
     npm install
     npm run build
-    # Delete all contents other than the dist folder
-    # rm -rf `ls | grep -v dist`
-    # Move the contents of the dist folder to the root of this directory
-    # mv dist/* .
+    # Delete all contents other than the docs folder
+    # rm -rf `ls | grep -v docs`
+    # Move the contents of the docs folder to the root of this directory
+    # mv docs/* .
     # Replace any reference of /assets/ with ./assets/
     find . -type f -name '*.html' -exec sed -i '' 's/\/assets\//\.\/assets\//g' {} +
     # Add .nojekyll to bypass Jekyll processing
     echo > .nojekyll
     # Delete all files and folders that are not .nojekyll, index.html, or assets/
     # rm -rf `ls -a | grep -v .nojekyll | grep -v index.html | grep -v assets`
-    # rename the dist folder to the name of the directory
-    mv dist $dir
-    # Move the contents of the dist folder to the root dist folder
-    mv $dir ../dist
+    # rename the docs folder to the name of the directory
+    mv docs $dir
+    # Move the contents of the docs folder to the root docs folder
+    mv $dir ../docs
+    cd ..
   fi
 done
 
