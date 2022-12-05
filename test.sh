@@ -25,11 +25,10 @@ for d in $(find . -maxdepth 1 -type d ! -path "./docs"); do
 done
 
 # # Add the deployed/ folder to Git and commit the changes
-git checkout -B gh-pages
+# git checkout -B gh-pages
 git add .
 git commit -m "Adding deployed files"
 
 # # Push the changes to your GitHub repository
 git push origin master
 
-git checkout master
