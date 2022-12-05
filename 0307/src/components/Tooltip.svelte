@@ -1,14 +1,11 @@
 <script>
   export let data;
-
-  import { fade } from "svelte/transition";
-
   import { format } from "d3-format";
   const suffixFormat = d => format(".2~s")(d).replace(/G/, "B");
 </script>
 
 {#if data?.country}
-  <div transition:fade>
+  <div>
     <h2>{data.country}</h2>
     <h3>Population of {suffixFormat(data.population)}</h3>
   </div>

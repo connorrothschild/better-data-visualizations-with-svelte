@@ -39,7 +39,7 @@
     .domain([0, max(data, d => d.population)])
     .range(["#26362e", "#0DCC6C"]);
 
-  // Autorotation
+  // Auto rotate the globe, 0.5 degrees per second
   import { interval } from "d3-timer";
   import { spring } from "svelte/motion";
 
@@ -74,8 +74,8 @@
       drag()
         .on("drag", event => {
           dragging = true;
-          $xRotation = $xRotation + event.dx * DRAG_SENSITIVITY;
-          $yRotation = $yRotation - event.dy * DRAG_SENSITIVITY; // We subtract here because the y-axis is inverted
+          ($xRotation = $xRotation + event.dx * DRAG_SENSITIVITY),
+            ($yRotation = $yRotation - event.dy * DRAG_SENSITIVITY); // We subtract here because the y-axis is inverted
         })
         .on("end", event => {
           dragging = false;
@@ -103,29 +103,27 @@
   import Legend from "$components/Legend.svelte";
 </script>
 
-<div class="chart-container" bind:clientWidth={width}>
-  <h1>The World at a Glance</h1>
-  <h2>Population by country, 2021</h2>
+<div class='chart-container' bind:clientWidth={width}>
   <svg {width} {height} bind:this={globe} class:dragging>
     <!-- Filter for drop shadow -->
     <Glow />
 
     <!-- Globe -->
-    <circle
-      r={width / 2}
-      cx={width / 2}
-      cy={height / 2}
+    <circle 
+      r={width / 2} 
+      cx={width / 2} 
+      cy={height / 2} 
       fill="#1c1c1c"
-      filter="url(#glow)"
+      filter="url(#glow)" 
       on:click={() => (tooltipData = null)}
     />
 
     <!-- Countries -->
     {#each countries as country}
-      <path
-        d={path(country)}
+      <path 
+        d={path(country)} 
         fill={colorScale(country.population || 0)}
-        stroke="none"
+        stroke="none" 
         on:click={() => (tooltipData = country)}
         on:focus={() => (tooltipData = country)}
         tabIndex="0"
@@ -155,46 +153,27 @@
 
 <style>
   .chart-container {
-    position: relative;
     max-width: 468px;
-    margin: 0 auto;
+    margin: auto;
   }
 
   :global(body) {
-    background: rgba(40, 40, 40);
+    background-color: rgb(40, 40, 40);
   }
 
   svg {
     overflow: visible;
   }
 
-  path {
-    cursor: pointer;
-  }
-
   .dragging {
     cursor: move;
   }
 
-  h1,
-  h2 {
-    color: white;
-    text-align: center;
+  path {
+    cursor: pointer;
   }
 
-  h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-    font-weight: 200;
-    margin-bottom: 1rem;
-  }
-
-  /* Typically removing :focus styles is bad accessibility practice,                                                                               but in our case the focused country has its own path outline */
+  /* Typically removing :focus styles is bad accessibility practice, but in our case the focused country has its own path outline */
   path:focus,
   path:focus-visible {
     outline: none;

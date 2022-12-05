@@ -4,24 +4,28 @@
 
   $: percentOfMax = (data?.population / colorScale.domain()[1]) * 100;
 
-  import { fade } from "svelte/transition";
-
   import { format } from "d3-format";
   const suffixFormat = d => format(".2~s")(d).replace(/G/, "B");
+
+  import { fade } from "svelte/transition";
 </script>
 
-<div class="legend" aria-hidden="true">
-  <span class="label">0</span>
-  <div
-    class="bar"
-    style:background="linear-gradient(to right, {colorScale.range()[0]}, {colorScale.range()[1]})"
-  >
-    {#if percentOfMax}
-      <span transition:fade class="line" style="left: {percentOfMax}%;" />
-    {/if}
-  </div>
-  <span class="label">{suffixFormat(colorScale.domain()[1])}</span>
+<div class="legend">
+  <span class="label">{colorScale.domain()[0]}</span>
+<div
+  class="bar"
+  style:background="linear-gradient(to right, {colorScale.range()[0]}, {colorScale.range()[1]})"
+>
+  {#if percentOfMax}
+    <span
+      transition:fade
+      class="line"
+      style="left: {percentOfMax}%;"
+    />
+  {/if}
 </div>
+  <span class="label">{suffixFormat(colorScale.domain()[1])}</span>
+  </div>
 
 <style>
   .bar {

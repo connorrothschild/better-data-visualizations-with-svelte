@@ -1,5 +1,5 @@
 {
-  "name": "module-3-final-visualization-better-data-visualizations-with-svelte",
+  "name": "module-3-lesson-7-adding-a-legend-better-data-visualizations-with-svelte",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,8 +14,9 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
-    "d3-array": "^3.2.0",
+    "d3-array": "3.2.1",
     "d3-drag": "3.0.0",
+    "d3-force": "3.0.0",
     "d3-format": "^3.1.0",
     "d3-geo": "^3.0.1",
     "d3-scale": "^4.0.2",
