@@ -14,8 +14,9 @@ for d in */ ; do
     cd ..
 done
 
-# Create a new folder for the deployed files
-mkdir docs
+# Create a new folder for the deployed files, and clear it if it exists
+rm -rf docs
+mkdir -p docs
 
 # Loop through all directories in the current directory again, excluding the dist/ folder
 for d in $(find . -maxdepth 1 -type d ! -path "./docs"); do
