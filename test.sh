@@ -22,6 +22,8 @@ for d in $(find . -maxdepth 1 -type d ! -path "./docs"); do
   # Move the dist/ folder from the current directory into the deployed/ folder
   # But first rename the dist/ folder to the name of the current directory
     mv $d/dist docs/$(basename $d)
+    # Find and replace all references to /assets/ with ./assets/
+    find docs/$(basename $d) -type f -name '*.html' -exec sed -i '' 's/\/assets\//\.\/assets\//g' {} +
 done
 
 # # Add the deployed/ folder to Git and commit the changes
