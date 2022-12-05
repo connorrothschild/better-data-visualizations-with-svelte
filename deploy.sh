@@ -20,7 +20,7 @@ for dir in */; do
     # Replace any reference of /assets/ with ./assets/
     find . -type f -name '*.html' -exec sed -i '' 's/\/assets\//\.\/assets\//g' {} +
     # Add .nojekyll to bypass Jekyll processing
-    echo > .nojekyll
+    touch .nojekyll
     # Delete all files and folders that are not .nojekyll, index.html, or assets/
     # rm -rf `ls -a | grep -v .nojekyll | grep -v index.html | grep -v assets`
     # rename the docs folder to the name of the directory
