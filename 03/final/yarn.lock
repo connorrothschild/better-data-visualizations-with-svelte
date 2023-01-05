@@ -123,6 +123,11 @@
   "resolved" "https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.15.11.tgz"
   "version" "0.15.11"
 
+"esbuild-darwin-arm64@0.15.11":
+  "integrity" "sha512-OMzhxSbS0lwwrW40HHjRCeVIJTURdXFA8c3GU30MlHKuPCcvWNUIKVucVBtNpJySXmbkQMDJdJNrXzNDyvoqvQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.15.11.tgz"
+  "version" "0.15.11"
+
 "esbuild@^0.15.9":
   "integrity" "sha512-OgHGuhlfZ//mToxjte1D5iiiQgWfJ2GByVMwEC/IuoXsBGkuyK1+KrjYu0laSpnN/L1UmLUCv0s25vObdc1bVg=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.15.11.tgz"
