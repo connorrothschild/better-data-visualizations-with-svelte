@@ -76,7 +76,7 @@
 
   .continent {
     font-size: 0.65rem;
-    padding: 1px 4px;
+    padding: 3px 4px 2px 4px;
     border-radius: 3px;
     text-transform: uppercase;
     white-space: nowrap;

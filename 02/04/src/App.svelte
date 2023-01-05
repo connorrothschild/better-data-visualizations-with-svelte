@@ -7,6 +7,9 @@
     height = 400;
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.bottom - margin.top;
+
   import { mean, rollups } from "d3-array";
 
   // Generate the average for each continent, so that we can sort according to that
@@ -37,11 +40,11 @@
 
   $: xScale = scaleLinear()
     .domain([1, 9]) // Alternatively, we could pass .domain(extent(data, d => d.happiness))
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
 
   let yScale = scaleBand()
     .domain(continents)
-    .range([height - margin.bottom - margin.top, 0])
+    .range([innerHeight, 0])
     .paddingOuter(0.5);
 
   let simulation = forceSimulation(data);

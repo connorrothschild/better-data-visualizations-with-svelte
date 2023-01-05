@@ -12,6 +12,9 @@
     height = 400;
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   import { mean, rollups } from "d3-array";
 
   // Generate the average for each continent, so that we can sort according to that
@@ -42,11 +45,11 @@
 
   $: xScale = scaleLinear()
     .domain([1, 9]) // Alternatively, we could pass .domain(extent(data, d => d.happiness))
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
 
   let yScale = scaleBand()
     .domain(continents)
-    .range([height - margin.bottom - margin.top, 0])
+    .range([innerHeight, 0])
     .paddingOuter(0.5);
 
   let simulation = forceSimulation(data);
@@ -66,11 +69,7 @@
       .force(
         "y",
         forceY()
-          .y(d =>
-            groupByContinent
-              ? yScale(d.continent)
-              : (height - margin.bottom - margin.top) / 2
-          )
+          .y(d => (groupByContinent ? yScale(d.continent) : innerHeight / 2))
           .strength(0.2)
       )
       .force("collide", forceCollide().radius(d => radiusScale(d.happiness)))
@@ -90,54 +89,59 @@
 
 <h1>The Happiest Countries in the World</h1>
 <Legend {colorScale} bind:hoveredContinent />
-<div 
-  class='chart-container' 
+<div
+  class="chart-container"
   bind:clientWidth={width}
   on:click={() => {
     groupByContinent = !groupByContinent;
     hovered = null;
-  }}>
-<svg {width} {height}>
-    <AxisX {xScale} {height} {width} {margin} />
-    <AxisY {yScale} {margin} {groupByContinent} />
+  }}
+>
+  <svg {width} {height}>
     <!-- Reference line -->
     {#if hovered}
-        <line
-            transition:fade
-            x1={hovered.x}
-            x2={hovered.x}
-            y1={height - margin.bottom}
-            y2={hovered.y + margin.top + radiusScale(hovered.happiness)}
-            stroke={colorScale(hovered.continent)}
-            stroke-width="2"
-        />
+      <line
+        transition:fade
+        x1={hovered.x}
+        x2={hovered.x}
+        y1={height - margin.bottom}
+        y2={hovered.y + margin.top + radiusScale(hovered.happiness)}
+        stroke={colorScale(hovered.continent)}
+        stroke-width="2"
+      />
     {/if}
-    <g class="inner-chart" 
+    <g
+      class="inner-chart"
       transform="translate({margin.left}, {margin.top})"
-      on:mouseleave={() => (hovered = null)}>
-    {#each nodes as node, i}
+      on:mouseleave={() => (hovered = null)}
+    >
+      <AxisX {xScale} height={innerHeight} width={innerWidth} />
+      <AxisY {yScale} {groupByContinent} />
+      {#each nodes as node, i}
         <circle
-            cx={node.x}
-            cy={node.y}
-            r={radiusScale(node.happiness)}
-            fill={colorScale(node.continent)}
-            title={node.country}
-            opacity={hovered || hoveredContinent
+          cx={node.x}
+          cy={node.y}
+          r={radiusScale(node.happiness)}
+          fill={colorScale(node.continent)}
+          title={node.country}
+          opacity={hovered || hoveredContinent
             ? hovered === node || hoveredContinent === node.continent
               ? 1
               : 0.3
             : 1}
-            stroke={hovered || hoveredContinent
+          stroke={hovered || hoveredContinent
             ? hovered === node || hoveredContinent === node.continent
-                ? "black"
-                : "transparent"
+              ? "black"
+              : "transparent"
             : "#00000090"}
-            on:mouseover={() => (hovered = node)}
-            on:focus={() => (hovered = node)}
-            tabindex="0"
-            on:click={(event) => {event.stopImmediatePropagation()}}
+          on:mouseover={() => (hovered = node)}
+          on:focus={() => (hovered = node)}
+          tabindex="0"
+          on:click={(event) => {
+            event.stopImmediatePropagation();
+          }}
         />
-    {/each}
+      {/each}
     </g>
   </svg>
   {#if hovered}

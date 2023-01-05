@@ -12,6 +12,9 @@
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
   const RADIUS = 5;
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   import { mean, rollups } from "d3-array";
 
   // Generate the average for each continent, so that we can sort according to that
@@ -42,11 +45,11 @@
 
   $: xScale = scaleLinear()
     .domain([1, 9]) // Alternatively, we could pass .domain(extent(data, d => d.happiness))
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
 
   let yScale = scaleBand()
     .domain(continents)
-    .range([height - margin.bottom - margin.top, 0])
+    .range([innerHeight, 0])
     .paddingOuter(0.5);
 
   let simulation = forceSimulation(data);
@@ -78,13 +81,19 @@
 
 <h1>The Happiest Countries in the World</h1>
 <Legend {colorScale} />
-<div class='chart-container' bind:clientWidth={width}>
+<div class="chart-container" bind:clientWidth={width}>
   <svg {width} {height}>
-    <AxisX {xScale} {height} {width} {margin} />
-    <AxisY {yScale} {margin} />
     <g class="inner-chart" transform="translate({margin.left}, {margin.top})">
+      <AxisX {xScale} height={innerHeight} width={innerWidth} />
+      <AxisY {yScale} />
       {#each nodes as node}
-        <circle cx={node.x} cy={node.y} r={radiusScale(node.happiness)} fill={colorScale(node.continent)} stroke="black" />
+        <circle
+          cx={node.x}
+          cy={node.y}
+          r={radiusScale(node.happiness)}
+          fill={colorScale(node.continent)}
+          stroke="black"
+        />
       {/each}
     </g>
   </svg>

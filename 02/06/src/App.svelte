@@ -13,6 +13,9 @@
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
   const RADIUS = 5;
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   import { mean, rollups } from "d3-array";
 
   // Generate the average for each continent, so that we can sort according to that
@@ -43,11 +46,11 @@
 
   $: xScale = scaleLinear()
     .domain([1, 9]) // Alternatively, we could pass .domain(extent(data, d => d.happiness))
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
 
   let yScale = scaleBand()
     .domain(continents)
-    .range([height - margin.bottom - margin.top, 0])
+    .range([innerHeight, 0])
     .paddingOuter(0.5);
 
   let simulation = forceSimulation(data);
@@ -84,8 +87,6 @@
 <Legend {colorScale} />
 <div class='chart-container' bind:clientWidth={width}>
 <svg {width} {height}>
-    <AxisX {xScale} {height} {width} {margin} />
-    <AxisY {yScale} {margin} />
     <!-- Reference line -->
     {#if hovered}
         <line
@@ -101,28 +102,30 @@
     <g class="inner-chart" 
       transform="translate({margin.left}, {margin.top})"
       on:mouseleave={() => (hovered = null)}>
-    {#each nodes as node, i}
-        <circle
-            cx={node.x}
-            cy={node.y}
-            r={radiusScale(node.happiness)}
-            stroke={hovered
-            ? hovered === node
-                ? "black"
-                : "transparent"
-            : "#00000090"}
-            fill={colorScale(node.continent)}
-            title={node.country}
-            opacity={hovered
-            ? hovered === node
-                ? 1
-                : 0.3
-            : 1}
-            on:mouseover={() => (hovered = node)}
-            on:focus={() => (hovered = node)}
-            tabindex="0"
-        />
-    {/each}
+      <AxisX {xScale} height={innerHeight} width={innerWidth} />
+      <AxisY {yScale} />
+      {#each nodes as node, i}
+          <circle
+              cx={node.x}
+              cy={node.y}
+              r={radiusScale(node.happiness)}
+              stroke={hovered
+              ? hovered === node
+                  ? "black"
+                  : "transparent"
+              : "#00000090"}
+              fill={colorScale(node.continent)}
+              title={node.country}
+              opacity={hovered
+              ? hovered === node
+                  ? 1
+                  : 0.3
+              : 1}
+              on:mouseover={() => (hovered = node)}
+              on:focus={() => (hovered = node)}
+              tabindex="0"
+          />
+      {/each}
     </g>
   </svg>
   {#if hovered}
