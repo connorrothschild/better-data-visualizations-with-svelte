@@ -11,20 +11,23 @@
 
   const margin = { top: 20, right: 15, bottom: 20, left: 0 };
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   $: xScale = scaleLinear()
     .domain([0, 100])
-    .range([0, width - margin.right - margin.left]);
+    .range([0, innerWidth]);
 
   let yScale = scaleLinear()
     .domain([0, max(data, d => d.hours)])
-    .range([height - margin.bottom - margin.top, 0]);
+    .range([innerHeight, 0]);
 </script>
 
 <div class='chart-container' bind:clientWidth={width}>
   <svg {width} {height}>
-      <AxisY {yScale} {width} {margin} />
-      <AxisX {height} {width} {xScale} {margin} />
-      <g class='inner-chart' transform="translate({margin.left}, {margin.top})">
+    <g class='inner-chart' transform="translate({margin.left}, {margin.top})">
+    <AxisX width={innerWidth} height={innerHeight} {xScale} />
+    <AxisY width={innerWidth} height={innerHeight} {yScale} />
       {#each data as d}
         <circle
           cx={xScale(d.grade)}

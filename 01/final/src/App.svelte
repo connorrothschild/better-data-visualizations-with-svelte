@@ -13,12 +13,16 @@
   const margin = { top: 20, right: 15, bottom: 20, left: 0 };
   const radius = 10;
 
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   $: xScale = scaleLinear()
     .domain([0, 100])
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
+
   let yScale = scaleLinear()
     .domain([0, max(data, d => d.hours)])
-    .range([height - margin.bottom - margin.top, 0]);
+    .range([innerHeight, 0]);
 
   let hoveredData;
 
@@ -31,9 +35,9 @@
   bind:clientWidth={width}
 >
   <svg {width} {height} on:mouseleave={() => hoveredData = null}>
-    <AxisX {xScale} {width} {height} {margin} />
-    <AxisY {yScale} {width} {margin} />
-    <g class='inner-chart' transform="translate({margin.left}, {margin.top})">
+    <g class="inner-chart" transform="translate({margin.left}, {margin.top})">
+        <AxisY width={innerWidth} {yScale} />
+        <AxisX height={innerHeight} width={innerWidth} {xScale} />
         {#each data.sort((a, b) => a.grade - b.grade) as d, index}
           <circle 
             in:fly={{ x: -10, opacity: 0, duration: 500 }}
