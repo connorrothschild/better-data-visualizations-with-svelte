@@ -110,7 +110,7 @@
 <div class="chart-container" bind:clientWidth={width}>
   <h1>The World at a Glance</h1>
   <h2>Population by country, 2021</h2>
-  <svg {width} {height} bind:this={globe} class:dragging>
+  <svg {width} {height}>
     <!-- Filter for drop shadow -->
     <Glow />
 
@@ -122,6 +122,8 @@
       fill="#1c1c1c"
       filter="url(#glow)"
       on:click={() => (tooltipData = null)}
+      bind:this={globe} 
+      class:dragging
     />
 
     <!-- Countries -->

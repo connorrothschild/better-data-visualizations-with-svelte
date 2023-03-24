@@ -105,7 +105,7 @@
 </script>
 
 <div class='chart-container' bind:clientWidth={width}>
-  <svg {width} {height} bind:this={globe} class:dragging>
+  <svg {width} {height}>
     <!-- Filter for drop shadow -->
     <Glow />
 
@@ -117,6 +117,8 @@
       fill="#1c1c1c"
       filter="url(#glow)" 
       on:click={() => (tooltipData = null)}
+      bind:this={globe} 
+      class:dragging
     />
 
     <!-- Countries -->
