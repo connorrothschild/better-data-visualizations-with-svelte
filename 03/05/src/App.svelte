@@ -41,17 +41,16 @@
 
   // Auto rotate the globe, 0.5 degrees per second
   import { interval } from "d3-timer";
-  import { tweened } from "svelte/motion";
-  import { circOut } from "svelte/easing";
+  import { spring } from "svelte/motion";
 
-  let xRotation = tweened(0, {
-    duration: 800,
-    easing: circOut
+  let xRotation = spring(0, {
+    stiffness: 0.08,
+    damping: 0.4
   });
 
-  let yRotation = tweened(-30, {
-    duration: 800,
-    easing: circOut
+  let yRotation = spring(-30, {
+    stiffness: 0.17,
+    damping: 0.7
   });
   const degreesPerSecond = 0.5;
 
@@ -79,17 +78,14 @@
             ($yRotation = $yRotation - event.dy * DRAG_SENSITIVITY); // We subtract here because the y-axis is inverted
         })
         .on("end", event => {
-          // Begin autorotation again after 800ms (once tweened to new position)
-          setTimeout(() => {
-            dragging = false;
-          }, 800);
+          dragging = false;
         })
     );
   });
 </script>
 
 <div class='chart-container' bind:clientWidth={width}>
-  <svg {width} {height}>
+  <svg {width} {height} bind:this={globe} class:dragging>
     <!-- Filter for drop shadow -->
     <Glow />
 
@@ -100,8 +96,6 @@
       cy={height / 2} 
       fill="#1c1c1c"
       filter="url(#glow)" 
-      bind:this={globe} 
-      class:dragging
     />
 
     <!-- Countries -->
