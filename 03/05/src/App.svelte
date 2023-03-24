@@ -41,16 +41,17 @@
 
   // Auto rotate the globe, 0.5 degrees per second
   import { interval } from "d3-timer";
-  import { spring } from "svelte/motion";
+  import { tweened } from "svelte/motion";
+  import { circOut } from "svelte/easing";
 
-  let xRotation = spring(0, {
-    stiffness: 0.08,
-    damping: 0.4
+  let xRotation = tweened(0, {
+    duration: 800,
+    easing: circOut
   });
 
-  let yRotation = spring(-30, {
-    stiffness: 0.17,
-    damping: 0.7
+  let yRotation = tweened(-30, {
+    duration: 800,
+    easing: circOut
   });
   const degreesPerSecond = 0.5;
 
@@ -78,7 +79,10 @@
             ($yRotation = $yRotation - event.dy * DRAG_SENSITIVITY); // We subtract here because the y-axis is inverted
         })
         .on("end", event => {
-          dragging = false;
+          // Begin autorotation again after 800ms (once tweened to new position)
+          setTimeout(() => {
+            dragging = false;
+          }, 800);
         })
     );
   });
