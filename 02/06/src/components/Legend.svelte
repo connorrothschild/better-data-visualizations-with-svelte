@@ -1,10 +1,11 @@
 <script>
   export let colorScale;
+  export let hoveredContinent;
 </script>
 
-<div class="legend">
+<div class="legend" on:mouseleave={() => (hoveredContinent = null)}>
   {#each colorScale.domain() as continent}
-    <p>
+    <p class:unhovered={hoveredContinent && hoveredContinent !== continent} on:mouseover={() => (hoveredContinent = continent)}>
       <span style="background: {colorScale(continent)}" />
       {continent}
     </p>
@@ -32,6 +33,10 @@
     display: flex;
     place-items: center;
     column-gap: 3px;
+  }
+
+  p.unhovered {
+    opacity: 0.3;
   }
 
   span {

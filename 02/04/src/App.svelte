@@ -1,4 +1,8 @@
 <script>
+  import AxisX from "$components/AxisX.svelte";
+  import AxisY from "$components/AxisY.svelte";
+  import Legend from "$components/Legend.svelte";
+
   import data from "$data/data.js";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
   import { scaleLinear, scaleBand, scaleOrdinal, scaleSqrt } from "d3-scale";
@@ -6,9 +10,10 @@
   let width = 400,
     height = 400;
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
+  const RADIUS = 5;
 
   $: innerWidth = width - margin.left - margin.right;
-  let innerHeight = height - margin.bottom - margin.top;
+  let innerHeight = height - margin.top - margin.bottom;
 
   import { mean, rollups } from "d3-array";
 
@@ -72,16 +77,40 @@
       .alphaDecay(0.0005) // [0, 1] The rate at which the simulation alpha approaches 0. you should decrease this if your bubbles are not completing their transitions between simulation states.
       .restart();
   }
-
-  $: console.log(simulation);
 </script>
 
-<div class='chart-container' bind:clientWidth={width}>
+<h1>The Happiest Countries in the World</h1>
+<Legend {colorScale} />
+<div class="chart-container" bind:clientWidth={width}>
   <svg {width} {height}>
     <g class="inner-chart" transform="translate({margin.left}, {margin.top})">
+      <AxisX {xScale} height={innerHeight} width={innerWidth} />
+      <AxisY {yScale} />
       {#each nodes as node}
-        <circle cx={node.x} cy={node.y} r={radiusScale(node.happiness)} fill={colorScale(node.continent)} stroke="black" />
+        <circle
+          cx={node.x}
+          cy={node.y}
+          r={radiusScale(node.happiness)}
+          fill={colorScale(node.continent)}
+          stroke="black"
+        />
       {/each}
     </g>
   </svg>
 </div>
+
+<style>
+  :global(.tick text, .axis-title) {
+    font-size: 12px; /* How big our text is */
+    font-weight: 400; /* How bold our text is */
+    fill: hsla(212, 10%, 53%, 1); /* The color of our text */
+    user-select: none; /* Prevents text from being selected */
+  }
+
+  h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>

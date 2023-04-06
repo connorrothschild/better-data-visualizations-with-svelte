@@ -6,6 +6,10 @@
   let width = 400,
     height = 400;
   const margin = { top: 0, right: 0, left: 0, bottom: 20 };
+
+  $: innerWidth = width - margin.left - margin.right;
+  let innerHeight = height - margin.top - margin.bottom;
+
   const RADIUS = 5;
 
   import { mean, rollups } from "d3-array";
@@ -19,32 +23,22 @@
     .sort((a, b) => a[1] - b[1]) // Sort according to value
     .map(d => d[0]); // Grab the continent name
 
-  let xScale = scaleLinear()
+  $: xScale = scaleLinear()
     .domain([1, 9]) // Alternatively, we could pass .domain(extent(data, d => d.happiness))
-    .range([0, width - margin.left - margin.right]);
+    .range([0, innerWidth]);
 
   let yScale = scaleBand()
     .domain(continents)
-    .range([height - margin.bottom - margin.top, 0])
+    .range([innerHeight, 0])
     .paddingOuter(0.5);
 
-  let simulation = forceSimulation(data)
-    .force(
-      "x",
-      forceX()
-        .x(d => xScale(d.happiness))
-        .strength(0.8)
-    )
-    .force(
-      "y",
-      forceY()
-        .y(d => yScale(d.continent))
-        .strength(0.2)
-    )
-    .force("collide", forceCollide().radius(RADIUS));
+  $: simulation = forceSimulation(data)
+    .force("x", forceX().x(d => xScale(d.happiness)).strength(0.8))
+    .force("y", forceY().y(d => yScale(d.continent)).strength(0.2))
+    .force("collide", forceCollide().radius(RADIUS))
 
-  let nodes = simulation.nodes();
-  console.log(nodes);
+  $: nodes = simulation.nodes();
+  $: console.log(nodes);
 </script>
 
 <div class='chart-container' bind:clientWidth={width}>

@@ -2,18 +2,19 @@
   export let colorScale;
 </script>
 
-<div class='legend'>
+<div class="legend">
   {#each colorScale.domain() as continent}
-      <p>
-          <span style="background-color: {colorScale(continent)}"></span>
-          {continent}
-      </p>
+    <p>
+      <span style="background: {colorScale(continent)}" />
+      {continent}
+    </p>
   {/each}
 </div>
 
 <style>
   .legend {
     display: flex;
+    place-items: center;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -26,8 +27,10 @@
     margin: 0;
     font-size: 0.8rem;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 300ms ease;
     display: flex;
-    align-items: center;
+    place-items: center;
     column-gap: 3px;
   }
 

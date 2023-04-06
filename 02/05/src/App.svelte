@@ -2,6 +2,7 @@
   import AxisX from "$components/AxisX.svelte";
   import AxisY from "$components/AxisY.svelte";
   import Legend from "$components/Legend.svelte";
+  import Tooltip from "$components/Tooltip.svelte";
 
   import data from "$data/data.js";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
@@ -77,26 +78,59 @@
       .alphaDecay(0.0005) // [0, 1] The rate at which the simulation alpha approaches 0. you should decrease this if your bubbles are not completing their transitions between simulation states.
       .restart();
   }
+
+  let hovered;
+  import { fade } from "svelte/transition";
 </script>
 
 <h1>The Happiest Countries in the World</h1>
 <Legend {colorScale} />
-<div class="chart-container" bind:clientWidth={width}>
-  <svg {width} {height}>
-    <g class="inner-chart" transform="translate({margin.left}, {margin.top})">
+<div class='chart-container' bind:clientWidth={width}>
+<svg {width} {height}>
+    <!-- Reference line -->
+    {#if hovered}
+        <line
+            transition:fade
+            x1={hovered.x}
+            x2={hovered.x}
+            y1={height - margin.bottom}
+            y2={hovered.y + margin.top + radiusScale(hovered.happiness)}
+            stroke={colorScale(hovered.continent)}
+            stroke-width="2"
+        />
+    {/if}
+    <g class="inner-chart" 
+      transform="translate({margin.left}, {margin.top})"
+      on:mouseleave={() => (hovered = null)}>
       <AxisX {xScale} height={innerHeight} width={innerWidth} />
       <AxisY {yScale} />
-      {#each nodes as node}
-        <circle
-          cx={node.x}
-          cy={node.y}
-          r={radiusScale(node.happiness)}
-          fill={colorScale(node.continent)}
-          stroke="black"
-        />
+      {#each nodes as node, i}
+          <circle
+              cx={node.x}
+              cy={node.y}
+              r={radiusScale(node.happiness)}
+              stroke={hovered
+              ? hovered === node
+                  ? "black"
+                  : "transparent"
+              : "#00000090"}
+              fill={colorScale(node.continent)}
+              title={node.country}
+              opacity={hovered
+              ? hovered === node
+                  ? 1
+                  : 0.3
+              : 1}
+              on:mouseover={() => (hovered = node)}
+              on:focus={() => (hovered = node)}
+              tabindex="0"
+          />
       {/each}
     </g>
   </svg>
+  {#if hovered}
+    <Tooltip data={hovered} {colorScale} {width} />
+  {/if}
 </div>
 
 <style>
@@ -112,5 +146,10 @@
     font-size: 1.35rem;
     font-weight: 600;
     text-align: center;
+  }
+
+  circle {
+    transition: stroke 300ms ease, opacity 300ms ease;
+    cursor: pointer;
   }
 </style>

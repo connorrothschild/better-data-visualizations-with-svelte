@@ -1,7 +1,7 @@
 <script>
   export let xScale;
-  export let height;
   export let width;
+  export let height;
 
   $: ticks = xScale.ticks(4);
 </script>
@@ -17,4 +17,3 @@
     Happiness, out of 10 &rarr;
   </text>
 </g>
-
